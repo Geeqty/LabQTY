@@ -28,9 +28,13 @@
             <a href="#">Ecosystem</a>
         </div>
 
-        <button class="btn-connect">
-            Connect
-        </button>
+        <a href="https://instagram.com/gee.qty"
+             target="_blank"
+             class="btn-connect">
+
+             <img src="{{ asset('img/instagram.png') }}" class="connect-icon">
+
+        </a>
 
     </div>
 
