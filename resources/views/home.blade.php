@@ -221,6 +221,70 @@ class Developer {
 
 </section>
 
+<section class="section4">
+
+    <div class="sec4-container reveal-up">
+
+        <h2 class="sec4-title reveal-up">
+            Development Projects
+        </h2>
+
+        <p class="sec4-sub reveal-up">
+            Experimental Lab Infrastructure
+        </p>
+
+        <div class="sec4-cards">
+
+            <div class="card card1 reveal-up">
+
+                <h3>NIGHT SHIFT:</h3>
+
+                <p class="link">
+                    THE CAFE ANOMALY [HORROR]
+                </p>
+
+                <div class="inner">
+                    Horror Experience 
+                    Built in Roblox
+                </div>
+
+            </div>
+
+
+            <div class="card card2 reveal-up">
+
+                <h3>Sanggabuana</h3>
+
+                <p class="link">
+                    Mountain
+                </p>
+
+                <div class="inner">
+                    Exploration Project Environment Build
+                </div>
+
+            </div>
+
+
+            <div class="card card3 reveal-up">
+
+                <h3>LAB SYSTEM</h3>
+
+                <p class="link">
+                    Experimental Project
+                </p>
+
+                <div class="inner">
+                    In Development
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 <script src="{{ asset('js/script.js') }}"></script>
 

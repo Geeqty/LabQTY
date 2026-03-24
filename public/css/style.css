@@ -682,3 +682,527 @@ body {
 
     transition-delay: 0.15s;
 }
+
+/* =========================
+        SECTION 4
+========================= */
+
+.section4 {
+    padding: 240px 20px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+.section4::before {
+    content: "";
+
+    position: absolute;
+
+    width: 900px;
+    height: 400px;
+
+    left: 50%;
+    top: 60%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        ellipse,
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.05),
+        transparent
+    );
+
+    filter: blur(40px);
+
+    z-index: -1;
+}
+
+.section4::after {
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 300px;
+
+    left: 50%;
+    top: 55%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(139, 92, 246, 0.15),
+        transparent 70%
+    );
+
+    filter: blur(60px);
+
+    z-index: -2;
+}
+
+/* container */
+
+.sec4-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* title */
+
+.sec4-title {
+    font-size: 44px;
+    font-weight: 700;
+    color: #7c7cff;
+}
+
+.sec4-sub {
+    margin-top: 10px;
+    color: #666;
+}
+
+/* wrapper */
+
+.sec4-cards {
+    margin-top: 80px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 40px;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    width: 300px;
+    height: 420px;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    background: #f4f5f8;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 0.35s ease;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.1),
+        0 0 30px rgba(139, 92, 246, 0.15);
+    color: #111;
+}
+
+/* background image */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 1; /* penting */
+
+    transform: scale(1);
+
+    transition: 0.4s ease;
+
+    z-index: 0;
+}
+/* images */
+
+.card1::before {
+    background-image: url("/img/cafe-game.png");
+}
+
+.card2::before {
+    background-image: url("/img/cafe-game.png");
+}
+
+.card3::before {
+    background-image: url("/img/cafe-game.png");
+}
+
+/* overlay */
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0);
+
+    opacity: 0;
+
+    transition: 0.3s;
+
+    z-index: 1;
+}
+/* text above */
+
+.card * {
+    position: relative;
+    z-index: 2;
+}
+
+/* inner */
+
+.inner {
+    background: linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.25),
+        rgba(59, 130, 246, 0.25)
+    );
+
+    backdrop-filter: blur(8px);
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    margin-top: 10px;
+
+    color: #111;
+}
+
+/* hover */
+
+/* ================= CARD BASE ================= */
+
+.card {
+    width: 300px;
+    height: 420px;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #f4f5f8;
+
+    transition: 0.35s ease;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.35),
+        0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= BACKGROUND IMAGE ================= */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 1; /* penting supaya kelihatan */
+
+    transform: scale(1);
+
+    transition: 0.4s ease;
+
+    z-index: 0;
+}
+
+/* ================= IMAGE PER CARD ================= */
+
+.card1::before {
+    background-image: url("/img/cafe-game.png");
+}
+
+.card2::before {
+    background-image: url("/img/Sanggabuana.png");
+}
+
+.card3::before {
+    background-image: url("/img/Qty-Logo.PNG");
+}
+
+/* ================= OVERLAY ================= */
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0);
+
+    opacity: 0;
+
+    transition: 0.3s;
+
+    z-index: 1;
+}
+
+/* ================= TEXT ABOVE BG ================= */
+
+.card * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ================= INNER CARD ================= */
+
+.inner {
+    background: linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.35),
+        rgba(59, 130, 246, 0.35)
+    );
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    margin-top: 10px;
+
+    backdrop-filter: blur(6px);
+}
+
+/* ================= HOVER ================= */
+
+.card:hover {
+    transform: translateY(-10px);
+
+    color: white;
+}
+
+.card:hover::before {
+    transform: scale(1.15);
+}
+
+.card:hover::after {
+    background: rgba(0, 0, 0, 0.35);
+
+    opacity: 1;
+}
+
+.card:hover h3,
+.card:hover p,
+.card:hover .link {
+    color: white;
+}
+
+.card:hover .inner {
+    background: linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.7),
+        rgba(59, 130, 246, 0.7)
+    );
+
+    color: white;
+}
+
+/* ================= FADE OTHER CARDS ================= */
+
+.sec4-cards:hover .card {
+    opacity: 0.4;
+}
+
+.sec4-cards .card:hover {
+    opacity: 1 !important;
+
+    transform: scale(1.05);
+
+    z-index: 5;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .sec4-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+} /* ================= CARD BASE ================= */
+
+.card {
+    width: 300px;
+    height: 420px;
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #f4f5f8;
+
+    transition: 0.35s ease;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card h3,
+.card p,
+.card .link {
+    color: white;
+}
+/* ================= BACKGROUND IMAGE ================= */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 1; /* penting supaya kelihatan */
+
+    transform: scale(1);
+
+    transition: 0.4s ease;
+
+    z-index: 0;
+}
+
+/* ================= IMAGE PER CARD ================= */
+
+.card1::before {
+    background-image: url("/img/cafe-game.png");
+}
+
+.card2::before {
+    background-image: url("/img/Sanggabuana.png");
+}
+
+.card3::before {
+    background-image: url("/img/Qty-Logo.PNG");
+}
+
+/* ================= OVERLAY ================= */
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25); /* tipis dari awal */
+
+    opacity: 1;
+
+    transition: 0.3s;
+
+    z-index: 1;
+}
+/* ================= TEXT ABOVE BG ================= */
+
+.card * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ================= INNER CARD ================= */
+
+.inner {
+    background: linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.35),
+        rgba(59, 130, 246, 0.35)
+    );
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    margin-top: 10px;
+
+    backdrop-filter: blur(6px);
+}
+
+/* ================= HOVER ================= */
+
+.card:hover {
+    transform: translateY(-10px);
+
+    color: white;
+}
+
+.card:hover::before {
+    transform: scale(1.15);
+}
+
+.card:hover::after {
+    background: rgba(0, 0, 0, 0.35);
+
+    opacity: 1;
+}
+
+.card:hover h3,
+.card:hover p,
+.card:hover .link {
+    color: white;
+}
+
+.card:hover .inner {
+    background: linear-gradient(
+        135deg,
+        rgba(139, 92, 246, 0.7),
+        rgba(59, 130, 246, 0.7)
+    );
+
+    color: white;
+}
+
+/* ================= FADE OTHER CARDS ================= */
+
+.sec4-cards:hover .card {
+    opacity: 0.4;
+}
+
+.sec4-cards .card:hover {
+    opacity: 1 !important;
+
+    transform: scale(1.05);
+
+    z-index: 5;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .sec4-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
