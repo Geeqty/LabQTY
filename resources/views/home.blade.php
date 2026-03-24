@@ -5,6 +5,7 @@
     <title>Lab</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
@@ -50,16 +51,16 @@
 
         <div class="left">
 
-            <h1 class="title reveal-left r1">
+            <h1 class="title hero-left d1">
                 <span class="grad">Turning Ideas Into Code</span><br>
                 <span class="blue">Portfolio Infrastructure</span>
             </h1>
 
-            <p class="desc reveal-left r2">
+            <p class="desc hero-left d2">
                 I build web applications, game developer, and experimental projects
             </p>
 
-            <p class="sub reveal-left r3">
+            <p class="sub hero-left d3">
                 Visit my GitHub to see my work and ongoing projects.
             </p>
 
@@ -67,7 +68,7 @@
 
                 <a href="https://github.com/Geeqty"
                     target="_blank"
-                    class="btn1 github-btn reveal-left r4">
+                    class="btn1 github-btn hero-left d4">
 
                     Github >
 
@@ -82,7 +83,7 @@
 
         <div class="right">
             <img src="{{ asset('img/Qty-Logo.png') }}" 
-                class="hero-logo reveal-right">
+                class="hero-logo hero-right d5">
         </div>
 
     </div>
@@ -98,9 +99,9 @@
 
 {{-- ABOUT / HUD --}}
 
-<section id="about" class="about-sec reveal-up">
+<section id="about" class="about-sec">
 
-    <div class="about-box">
+    <div class="about-box reveal-up">
 
         <h2 class="about-title">
             Developer Overview
@@ -115,12 +116,12 @@
         </div>
 
         <div>
-            <h3>10+</h3>
+            <h3>15+</h3>
              <p>Projects</p>
         </div>
 
         <div>
-            <h3>5+</h3>
+            <h3>3+</h3>
             <p>Languages</p>
         </div>
 
@@ -149,6 +150,70 @@
             <div class="about-card">
                 Experimental Projects
             </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{{-- SECTION 3 --}}
+
+<section class="section3">
+
+    <div class="sec3-wrap">
+
+        <div class="sec3-left sec3-anim-left">
+
+            <div class="code-box">
+
+                <pre>
+
+class Developer {
+
+    constructor() {
+        this.name = "Gee";
+        this.role = "Web & Game Developer";
+        }
+
+    build() {
+
+        const web = "Laravel / JS";
+        const game = "Roblox";
+        const lab = "Experimental";
+
+        return { web, game, lab };
+
+    }
+}
+                </pre>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="sec3-right sec3-anim-right">
+
+            <h2 class="sec3-title">
+                Code is My Workspace
+            </h2>
+
+            <p class="sec3-desc">
+                I build web applications, game systems, and experimental projects.
+                My focus is creating clean UI, smooth experience,
+                and creative development ideas.
+            </p>
+
+            <h3 class="sec3-sub">
+                LabQTY Development Lab
+            </h3>
+
+            <p class="sec3-text">
+                This portfolio is my personal lab where I test ideas,
+                build projects, and improve my skills every day.
+            </p>
 
         </div>
 

@@ -1,18 +1,42 @@
 body {
     margin: 0;
+
+    font-family: "Inter", sans-serif;
+
     background:
         radial-gradient(
             circle at 70% -10%,
-            rgba(139, 92, 246, 0.25),
+            rgba(139, 92, 246, 0.35),
             transparent 40%
         ),
         radial-gradient(
             circle at 40% -20%,
-            rgba(59, 130, 246, 0.25),
+            rgba(59, 130, 246, 0.35),
             transparent 45%
         ),
+        /* tengah */
+        radial-gradient(
+                circle at 80% 50%,
+                rgba(139, 92, 246, 0.18),
+                transparent 50%
+            ),
+        radial-gradient(
+            circle at 10% 70%,
+            rgba(59, 130, 246, 0.18),
+            transparent 55%
+        ),
+        /* bawah */
+        radial-gradient(
+                circle at 70% 95%,
+                rgba(139, 92, 246, 0.22),
+                transparent 60%
+            ),
+        radial-gradient(
+            circle at 20% 100%,
+            rgba(59, 130, 246, 0.22),
+            transparent 60%
+        ),
         linear-gradient(to bottom right, #f4f6ff, #eef3ff, #f8f9ff);
-    font-family: "Inter", sans-serif;
 }
 
 /* NAVBAR */
@@ -193,17 +217,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background:
-        radial-gradient(
-            500px 300px at 20% 50%,
-            rgba(139, 92, 246, 0.25),
-            transparent
-        ),
-        radial-gradient(
-            500px 300px at 80% 80%,
-            rgba(59, 130, 246, 0.25),
-            transparent
-        );
+    position: relative;
 }
 
 .about-box {
@@ -370,52 +384,100 @@ body {
 
 /* FROM LEFT */
 
-.reveal-left {
+/* ===== HERO ANIMATION ===== */
+
+.hero-left,
+.hero-right {
     opacity: 0;
-    transform: translateX(-120px);
-    animation: revealLeft 0.9s ease forwards;
+    will-change: transform, opacity;
 }
 
-@keyframes revealLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* posisi awal */
+
+.hero-left {
+    transform: translate3d(-80px, 0, 0);
 }
 
-/* FROM RIGHT */
+.hero-right {
+    transform: translate3d(80px, 0, 0);
+}
 
-.reveal-right {
+/* aktif */
+
+/* =========================
+   HERO ANIMATION
+========================= */
+
+.hero-left,
+.hero-right {
     opacity: 0;
-    transform: translateX(120px);
-    animation: revealRight 0.9s ease forwards;
+    will-change: transform, opacity;
 }
 
-@keyframes revealRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+/* posisi awal */
+
+.hero-left {
+    transform: translate3d(-140px, 0, 0);
 }
 
-/* delay */
-
-.r1 {
-    animation-delay: 0.2s;
-}
-.r2 {
-    animation-delay: 0.4s;
-}
-.r3 {
-    animation-delay: 0.6s;
-}
-.r4 {
-    animation-delay: 0.8s;
-}
-.r5 {
-    animation-delay: 1s;
+.hero-right {
+    transform: translate3d(140px, 0, 0);
 }
 
+/* aktif */
+
+/* =========================
+   HERO ANIMATION
+========================= */
+
+.hero-left,
+.hero-right {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+.hero-left {
+    transform: translate3d(-140px, 0, 0);
+}
+
+.hero-right {
+    transform: translate3d(140px, 0, 0);
+}
+
+/* aktif */
+
+.hero-left.active,
+.hero-right.active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+
+    transition:
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 1.4s ease;
+}
+
+/* ===== DELAY ===== */
+/* HARUS pakai .active di belakang */
+
+.hero-left.d1.active {
+    transition-delay: 0.1s;
+}
+
+.hero-left.d2.active {
+    transition-delay: 0.25s;
+}
+
+.hero-left.d3.active {
+    transition-delay: 0.4s;
+}
+
+.hero-left.d4.active {
+    transition-delay: 0.55s;
+}
+
+.hero-right.d5.active {
+    transition-delay: 0.7s;
+}
 /* reveal up */
 
 .reveal-up {
@@ -431,4 +493,192 @@ body {
     opacity: 1;
 
     transform: translate3d(0, 0, 0);
+}
+
+.reveal-up {
+    opacity: 0;
+    transform: translate3d(0, 140px, 0);
+
+    will-change: transform, opacity;
+
+    transition:
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 1.4s ease;
+}
+/* SECTION 3 */
+
+.section3 {
+    padding: 220px 20px 150px;
+    position: relative;
+}
+
+.section3::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: rgba(139, 92, 246, 0.15);
+
+    filter: blur(120px);
+
+    top: 20%;
+    right: 10%;
+
+    z-index: -1;
+}
+
+.section3::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    background: rgba(59, 130, 246, 0.15);
+
+    filter: blur(120px);
+
+    bottom: 10%;
+    left: 5%;
+
+    z-index: -1;
+}
+
+.sec3-wrap {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+}
+
+/* LEFT */
+
+.sec3-left {
+    flex: 1;
+}
+
+.code-box {
+    background: linear-gradient(180deg, #4f46e5, #3730a3);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    color: white;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.code-box pre {
+    margin: 0;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    padding-left: 40px;
+
+    white-space: pre;
+}
+
+/* RIGHT */
+
+.sec3-right {
+    flex: 1;
+
+    font-family: "Inter", sans-serif;
+}
+
+.sec3-title {
+    font-size: 36px;
+    font-weight: 700;
+
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sec3-desc {
+    margin-top: 14px;
+
+    color: #4b5563;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+.sec3-sub {
+    margin-top: 22px;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sec3-text {
+    margin-top: 10px;
+
+    color: #6b7280;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+/* SMOOTH LEFT */
+/* ===== SECTION 3 ANIMATION ===== */
+
+.sec3-anim-left,
+.sec3-anim-right {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+/* posisi awal */
+
+.sec3-anim-left {
+    transform: translate3d(-80px, 0, 0);
+}
+
+.sec3-anim-right {
+    transform: translate3d(80px, 0, 0);
+}
+
+/* aktif */
+
+.sec3-anim-left.active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+
+    transition:
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 1.4s ease;
+}
+
+.sec3-anim-right.active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+
+    transition:
+        transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 1.4s ease;
+
+    transition-delay: 0.15s;
 }
