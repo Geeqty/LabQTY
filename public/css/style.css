@@ -66,6 +66,10 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+/* ======================
+   CONNECT BUTTON (IG)
+====================== */
+
 .btn-connect {
     background: linear-gradient(90deg, #8b5cf6, #3b82f6);
     border: none;
@@ -77,28 +81,26 @@ body {
 
     border-radius: 50%;
 
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
     overflow: hidden;
 
-    transition: all 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+
+    will-change: transform;
 }
 
 .btn-connect:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px) translateZ(0);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.connect-icon {
-    width: 20px;
-    height: 20px;
-
-    object-fit: contain;
-
-    display: block;
-}
+/* icon */
 
 .connect-icon {
     width: 18px;
@@ -106,7 +108,9 @@ body {
     object-fit: contain;
 }
 
-/* HERO */
+/* ======================
+   HERO
+====================== */
 
 .hero {
     margin-top: 100px;
@@ -119,9 +123,11 @@ body {
     max-width: 1400px;
     margin: auto;
     width: 100%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 40px;
 }
 
@@ -148,28 +154,82 @@ body {
     color: #777;
 }
 
+/* ======================
+   BUTTONS WRAP
+====================== */
+
 .btns {
     margin-top: 30px;
 }
 
+/* ======================
+   GITHUB BUTTON
+====================== */
+
 .btn1 {
     background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+
     border: none;
     color: white;
+
     padding: 12px 22px;
     border-radius: 25px;
 
-    transition: all 0.25s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    position: relative;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+
+    will-change: transform;
 }
 
-.btn1:hover {
-    transform: translateY(-4px);
+.github-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    overflow: hidden;
+
+    will-change: transform;
+}
+
+/* ======================
+   GLOBAL HOVER (SAMA IG)
+====================== */
+
+.btn1:hover,
+.btn-connect:hover,
+.github-btn:hover {
+    transform: translateY(-4px) translateZ(0);
+
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* ======================
+   ICON
+====================== */
+
+.gh-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* ======================
+   HERO LOGO
+====================== */
+
 .hero-logo {
-    width: 560px; /* lebih besar */
+    width: 560px;
 
     max-width: none;
 
@@ -181,13 +241,29 @@ body {
     flex: 1;
 
     display: flex;
-
-    justify-content: flex-end; /* dorong ke kanan */
-
+    justify-content: flex-end;
     align-items: center;
 }
 
-/* scroll effect */
+/* hero logo */
+
+.hero-logo {
+    width: 560px;
+    max-width: none;
+
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15))
+        drop-shadow(0 0 40px rgba(139, 92, 246, 0.35));
+}
+
+.right {
+    flex: 1;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* navbar scroll */
 
 .nav-scroll {
     backdrop-filter: blur(10px);
@@ -195,17 +271,6 @@ body {
     background: rgba(240, 240, 255, 0.4);
 
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.github-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.gh-icon {
-    width: 18px;
-    height: 18px;
 }
 
 /* ABOUT SECTION */
@@ -1198,11 +1263,96 @@ body {
     z-index: 5;
 }
 
-/* ================= RESPONSIVE ================= */
+/* =========================
+        FOOTER
+========================= */
 
-@media (max-width: 900px) {
-    .sec4-cards {
-        flex-direction: column;
-        align-items: center;
-    }
+.footer {
+    margin-top: 200px;
+
+    padding: 80px 40px 40px;
+
+    background: #f3f4f6;
+}
+
+.footer-wrap {
+    max-width: 1400px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 80px;
+}
+
+/* LEFT */
+
+.footer-left {
+    max-width: 350px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.footer-desc {
+    margin-top: 10px;
+    color: #6b7280;
+}
+
+.footer-icons {
+    margin-top: 20px;
+
+    display: flex;
+    gap: 15px;
+}
+
+.footer-icons img {
+    width: 20px;
+    opacity: 0.6;
+}
+
+/* RIGHT */
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    display: block;
+
+    color: #6b7280;
+
+    margin-bottom: 6px;
+
+    font-size: 14px;
+
+    text-decoration: none;
+}
+
+.footer-col a:hover {
+    color: #111;
+}
+
+/* BOTTOM */
+
+.footer-bottom {
+    margin-top: 60px;
+
+    border-top: 1px solid #ddd;
+
+    padding-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 13px;
+    color: #6b7280;
 }

@@ -1,108 +1,86 @@
 document.addEventListener("DOMContentLoaded", () => {
     /* =========================
-       NAVBAR SCROLL (optimized)
+       NAVBAR SCROLL
     ========================= */
 
     const nav = document.getElementById("navbar");
 
+    let ticking = false;
+
     window.addEventListener(
         "scroll",
         () => {
-            if (!nav) return;
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    if (nav) {
+                        if (window.scrollY > 50) {
+                            nav.classList.add("nav-scroll");
+                        } else {
+                            nav.classList.remove("nav-scroll");
+                        }
+                    }
 
-            if (window.scrollY > 50) {
-                nav.classList.add("nav-scroll");
-            } else {
-                nav.classList.remove("nav-scroll");
+                    ticking = false;
+                });
+
+                ticking = true;
             }
         },
         { passive: true },
     );
 
-    /* =========================
-       SMOOTH SCROLL ARROW (FIX BUG OFFSET)
-    ========================= */
+    /* HERO */
+
+    const hero = document.querySelector(".hero");
+
+    if (hero) {
+        const heroLeft = hero.querySelectorAll(".hero-left");
+        const heroRight = hero.querySelectorAll(".hero-right");
+
+        requestAnimationFrame(() => {
+            heroLeft.forEach((el) => el.classList.add("active"));
+            heroRight.forEach((el) => el.classList.add("active"));
+        });
+    }
+
+    /* REVEAL */
+
+    const revealElements = document.querySelectorAll(".reveal-up");
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    obs.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.15,
+        },
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+
+    /* SCROLL ARROW */
 
     const arrow = document.querySelector(".scroll-down");
 
     if (arrow) {
         arrow.addEventListener("click", () => {
             const about = document.querySelector("#about");
-            const nav = document.getElementById("navbar");
 
             if (!about) return;
 
-            requestAnimationFrame(() => {
-                const navHeight = nav ? nav.offsetHeight : 0;
-
-                const top =
-                    about.getBoundingClientRect().top +
-                    window.pageYOffset -
-                    navHeight -
-                    10;
-
-                window.scrollTo({
-                    top: top,
-                    behavior: "smooth",
-                });
+            window.scrollTo({
+                top: about.offsetTop - 80,
+                behavior: "smooth",
             });
         });
     }
 
-    /* =========================
-       REVEAL ANIMATION (ABOUT)
-    ========================= */
-
-    const revealElements = document.querySelectorAll(".reveal-up");
-
-    if (revealElements.length > 0) {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (
-                        entry.isIntersecting &&
-                        !entry.target.classList.contains("active")
-                    ) {
-                        entry.target.classList.add("active");
-                    }
-                });
-            },
-            {
-                threshold: 0.35,
-            },
-        );
-
-        revealElements.forEach((el) => observer.observe(el));
-    }
-
-    /* =========================
-       HERO ANIMATION
-    ========================= */
-
-    const hero = document.querySelector(".hero");
-
-    if (hero) {
-        const left = hero.querySelectorAll(".hero-left");
-        const right = hero.querySelectorAll(".hero-right");
-
-        const heroObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        left.forEach((el) => el.classList.add("active"));
-                        right.forEach((el) => el.classList.add("active"));
-                    }
-                });
-            },
-            { threshold: 0.2 },
-        );
-
-        heroObserver.observe(hero);
-    }
-
-    /* =========================
-       SECTION 3 ANIMATION
-    ========================= */
+    /* SECTION 3 */
 
     const section3 = document.querySelector(".section3");
 
@@ -111,19 +89,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const right = section3.querySelector(".sec3-anim-right");
 
         const sec3Observer = new IntersectionObserver(
-            (entries) => {
+            (entries, obs) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         if (left) left.classList.add("active");
 
                         setTimeout(() => {
                             if (right) right.classList.add("active");
-                        }, 150);
+                        }, 120);
+
+                        obs.unobserve(entry.target);
                     }
                 });
             },
             {
-                threshold: 0.55,
+                threshold: 0.2,
             },
         );
 

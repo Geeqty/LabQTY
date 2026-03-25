@@ -168,7 +168,7 @@
             <div class="code-box">
 
                 <pre>
-
+                    
 class Developer {
 
     constructor() {
@@ -285,6 +285,83 @@ class Developer {
     </div>
 
 </section>
+
+<footer class="footer">
+
+    <div class="footer-wrap">
+
+        <!-- LEFT -->
+
+        <div class="footer-left">
+
+            <div class="footer-logo">
+                LabQTY
+            </div>
+
+            <p class="footer-desc">
+                Making trust public infrastructure.  
+                Portfolio development laboratory.
+            </p>
+
+            <div class="footer-icons">
+
+                <img src="{{ asset('img/github.png') }}">
+                <img src="{{ asset('img/instagram.png') }}">
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="footer-links">
+
+            <div class="footer-col">
+                <h4>About</h4>
+                <a href="#">Terms</a>
+                <a href="#">Careers</a>
+                <a href="#">Docs</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="#">Help</a>
+                <a href="#">Troubleshooting</a>
+                <a href="#">FAQ</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Developers</h4>
+                <a href="#">GitHub</a>
+                <a href="#">Docs</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Ecosystem</h4>
+                <a href="#">Reports</a>
+                <a href="#">Governance</a>
+                <a href="#">Submit</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 LabQTY
+        </span>
+
+        <span>
+            Cookie Policy
+        </span>
+
+    </div>
+
+</footer>
 
 <script src="{{ asset('js/script.js') }}"></script>
 
